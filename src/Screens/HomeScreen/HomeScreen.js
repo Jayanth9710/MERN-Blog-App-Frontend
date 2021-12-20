@@ -5,6 +5,7 @@ import Sidebar from '../../Components/Sidebar/Sidebar'
 import './HomeScreen.css';
 import axios from 'axios'
 import { useLocation } from 'react-router-dom';
+import env from '../../Settings'
 
 export default function HomeScreen() {
 
@@ -15,7 +16,7 @@ console.log(search)
     useEffect(() => {
 
         const fetchPost = async () => {
-            const res = await axios.get("posts/"+search)
+            const res = await axios.get(`${env.api}/posts/`+search)
             console.log(res)
             setPosts(res.data)
         }

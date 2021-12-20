@@ -3,6 +3,7 @@ import axios from 'axios';
 import "./Write.css";
 import { Link,useNavigate  } from 'react-router-dom'
 import { Context } from '../../Components/Context/Context';
+import env from '../../Settings'
 
 export default function Write() {
 
@@ -34,7 +35,7 @@ export default function Write() {
       }
     }
     try {
-      const res = await axios.post("/posts/add",newPost);
+      const res = await axios.post(`${env.api}/posts/add`,newPost);
       console.log(res)
       navigate("/posts/"+res.data.post._id)
     } catch (error) {

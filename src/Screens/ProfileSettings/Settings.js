@@ -3,6 +3,7 @@ import Sidebar from '../../Components/Sidebar/Sidebar'
 import { useContext, useState } from 'react';
 import { Context } from '../../Components/Context/Context';
 import axios from 'axios';
+import env from '../../Settings'
 
 export default function Settings() {
     const {user,dispatch} = useContext(Context);
@@ -31,7 +32,7 @@ export default function Settings() {
           data.append("file",file);
           updatedUser.displayPicture = filename;
           try {
-            await axios.post("/upload",data);
+            await axios.post(`${env.api}/upload`,data);
             
           } catch (error) {
             console.log(error)

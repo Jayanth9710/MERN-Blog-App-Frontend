@@ -2,13 +2,14 @@ import {useState,useEffect} from 'react';
 import axios from 'axios'
 import './Sidebar.css'
 import { Link } from 'react-router-dom';
+import env from '../../Settings'
 
 export default function Sidebar() {
     const [cats,setCats] = useState([]);
 
     useEffect(() => {
         const getCats = async () => {
-            const res = await axios.get("/categories");
+            const res = await axios.get(`${env.api}/categories`);
             setCats(res.data)
         }
         getCats()

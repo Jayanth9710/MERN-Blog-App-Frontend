@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios'
 import { Context } from '../../Components/Context/Context';
 import './Login.css'
+import env from '../../Settings'
 
 export default function Login() {
 
@@ -15,7 +16,7 @@ export default function Login() {
         dispatch({type:"LOGIN_START"});
 
         try {
-            const res = await axios.post("/login", {
+            const res = await axios.post(`${env.api}/login`, {
                 email:userRef.current.value,
                 password:passwordRef.current.value,
             })

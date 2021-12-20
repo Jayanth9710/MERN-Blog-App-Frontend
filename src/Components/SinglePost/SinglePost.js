@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom'
 import './SinglePost.css'
 import Post from '../Post/Post';
 import { Context } from '../Context/Context';
+import env from '../../Settings'
 
 export default function SinglePost() {
     const location = useLocation()
@@ -17,7 +18,7 @@ export default function SinglePost() {
 
     useEffect(() => {
 const getPost = async () => {
-    const res = await axios.get(`/posts/${path}`);
+    const res = await axios.get(`${env.api}/posts/${path}`);
     setPost(res.data)
     setTitle(res.data.title)
     setDesc(res.data.desc)
@@ -27,7 +28,7 @@ getPost()
 
     const handleDelete = async () => {
         try {
-            await axios.delete(`/posts/${post._id}`,{data:{username:user.username}});
+            await axios.delete(`${env.api}/posts/${post._id}`,{data:{username:user.username}});
             window.location.replace("/")
         } catch (error) {
             
@@ -37,7 +38,7 @@ getPost()
 
     const handleUpdate = async () => {
         try {
-            await axios.put(`/posts/${post._id}`,{username:user.username,title,desc});
+            await axios.put(`${env.api}/posts/${post._id}`,{username:user.username,title,desc});
             setUpdate(false)
         } catch (error) {
             
