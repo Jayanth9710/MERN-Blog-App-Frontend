@@ -12,7 +12,7 @@ export default function Settings() {
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
     const [success,setSuccess] = useState(false);
-    const PF ="http://localhost:7000/images/"
+    const PF ="https://mern-blog-app-jay.herokuapp.com/images/"
 
     const handleSubmit = async (e) => {
         dispatch({type:"UPDATE_START"})
@@ -39,7 +39,7 @@ export default function Settings() {
           }
         }
         try {
-          const res = await axios.put("/user/"+user._id, updatedUser);
+          const res = await axios.put(`${env.api}/user/`+user._id, updatedUser);
            setSuccess(true)
            dispatch({type:"UPDATE_SUCCESS",payload:res.data})
         } catch (error) {  
