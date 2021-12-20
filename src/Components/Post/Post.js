@@ -2,7 +2,7 @@ import './Post.css';
 import {Link} from 'react-router-dom'
 
 export default function Post({post}) {
-    const PF = "http://localhost:7000/images/";
+    const PF = "https://mern-blog-app-jay.herokuapp.com/";
     return (
         <div className="post">
             {post.photo && (
