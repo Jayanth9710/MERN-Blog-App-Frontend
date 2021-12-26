@@ -13,10 +13,7 @@ export default function Navbar() {
     return (
         <div className='nav'>
             <div className="nav__left">
-            <i className=" nav__icon fab fa-facebook-square"></i>
-            <i className=" nav__icon fab fa-twitter-square"></i>
-            <i className=" nav__icon fab fa-pinterest-square"></i>
-            <i className=" nav__icon fab fa-instagram-square"></i>
+            <h3 className='logo'>Offsider</h3>
             </div>
             <div className="nav__center">
                 <ul className="nav__list">

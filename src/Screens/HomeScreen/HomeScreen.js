@@ -26,8 +26,8 @@ console.log(search)
         <>
         <Header/>
         <div className="homeScreen" >
+        <Sidebar/>
             <Posts posts={posts}/>
-            <Sidebar/>
         </div>
         </>
     )

@@ -72,7 +72,7 @@ export default function Settings() {
                 {success && <span style={{color:"green",textAlign:"center",margin:"20px"}}>Profile has been Updated.</span>}
                 </form>
             </div>
-            <Sidebar/>
+            {/* <Sidebar/> */}
         </div>
     )
 }
