@@ -4,6 +4,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #e9ecef;
     /* background-image: ; */
 }
 
@@ -30,7 +31,7 @@
 .loginButton{
     margin-top: 20px;
     cursor: pointer;
-    background-color: lightcoral;
+    background-color: #495057;
     border: none;
     color: white;
     border-radius: 10px;
@@ -47,7 +48,7 @@ background-color:rgb(243, 153, 120) ;
     position: absolute;
     top: 60px;
     right: 20px;
-    background-color: teal;
+    background-color: #495057;
     cursor: pointer;
     border: none;
     padding: 10px;

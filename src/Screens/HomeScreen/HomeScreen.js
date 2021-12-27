@@ -6,6 +6,7 @@ import './HomeScreen.css';
 import axios from 'axios'
 import { useLocation } from 'react-router-dom';
 import env from '../../Settings'
+import RightSide from '../../Components/RightSide/RightSide';
 
 export default function HomeScreen() {
 
@@ -26,8 +27,11 @@ console.log(search)
         <>
         <Header/>
         <div className="homeScreen" >
+            <div className='post_side'>
         <Sidebar/>
             <Posts posts={posts}/>
+            </div>
+            <RightSide/>
         </div>
         </>
     )

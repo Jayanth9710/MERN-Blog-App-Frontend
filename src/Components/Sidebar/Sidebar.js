@@ -17,30 +17,11 @@ export default function Sidebar() {
     return (
         <div className="sidebar">
             <div className="sidebar__item">
-            <span className="sidebar__title"> About Me</span>
+            <span className="sidebar__title"> About Offsider</span>
             <img></img>
-            <p></p>
+            <p>Offsider is a contemporary blogging website for people who are keen to know more of the world we live in !</p>
             </div>
-            <div  className="sidebar__item">
-                <span className="sidebar__title">Categories</span>
-                <ul className="sidebar__list">
-                    {cats.map((c)=> (
-                        <Link className='link' to={`/?cat=${c.name}`}>
-                        <li className="sidebar__listItem">{c.name}</li>
-                        </Link>
-                    ))}
-                    
-                </ul>
-            </div>
-            <div className="sidebar__item">
-                <span className="sidebar__title">Follow</span>
-                <div className="sidbebar__social">
-                <i className=" sidebar__icon fab fa-facebook-square"></i>
-            <i className=" sidebar__icon fab fa-twitter-square"></i>
-            <i className=" sidebar__icon fab fa-pinterest-square"></i>
-            <i className=" sidebar__icon fab fa-instagram-square"></i>
-                </div>
-            </div>
+            
 
         </div>
     )

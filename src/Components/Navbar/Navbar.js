@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Context } from '../Context/Context';
-import './Navbar.css'
+import './Navbar.scss'
 
-export default function Navbar() {
+export default function Navbar({ menuOpen, setMenuOpen }) {
     const {user,dispatch} = useContext(Context);
     const PF ="https://mern-blog-app-jay.herokuapp.com/images/"
     const handleLogout = () => {
@@ -11,7 +11,8 @@ export default function Navbar() {
     }
 
     return (
-        <div className='nav'>
+        <div className={'navbar ' + (menuOpen && "active")}>
+            <div className='wrapper'>
             <div className="nav__left">
             <h3 className='logo'>Offsider</h3>
             </div>
@@ -21,13 +22,7 @@ export default function Navbar() {
                         <Link className='link' to="/">Home</Link>
                     </li>
                     <li className="nav__list__item">
-                    <Link className='link' to="/about">About</Link>
-                    </li>
-                    <li className="nav__list__item">
-                    <Link className='link' to="/contact">Contact</Link>
-                    </li>
-                    <li className="nav__list__item">
-                    <Link className='link' to="/write">Jot</Link>
+                    <Link className='link' to="/write">Create</Link>
                     </li>
                     <li className="nav__list__item" onClick={handleLogout}>
                         { user && "LOGOUT"}
@@ -35,22 +30,17 @@ export default function Navbar() {
                 </ul>
             </div>
             <div className="nav__right">
-              
-                {
-                    user ? (  <Link to="/edit" className='link'><img className="nav__avatar" src={PF + user.displayPicture} alt=""/></Link>) : 
-                    (<ul className='nav__list'>
-                        <li className='nav__list__item'>
-                            <Link className='link' to="/login">Login</Link>
-                        </li>
-                        <li className='nav__list__item'>
-                            <Link className='link' to="/register">Register</Link>
-                             </li>
-                    
-                    </ul>
-                    )
-                }
-               
             <i className=" nav__search__icon fas fa-search"></i>
+
+            {user ? (<Link to="/edit" className='link'><img className="nav__avatar" src={PF + user.displayPicture} alt=""/></Link>) : (
+                <div className='hamburger' onClick={()=>setMenuOpen(!menuOpen)}>
+                    <span className='line1'></span>
+                    <span className='line2'></span>
+                    <span className='line3'></span>
+                </div>
+                )}
+            </div>
+            
             </div>
         </div>
     )

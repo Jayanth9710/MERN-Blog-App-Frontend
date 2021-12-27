@@ -1,19 +1,20 @@
 .singlePost{
-    flex: 9;   
+    flex: 4;   
 }
 
 .singlePost__wrapper{
-    padding: 20px;
-    padding-right: 0;
+    padding: 100px;
+    padding-right: 30px;
     display: flex;
     flex-direction: column;
 }
 
 .singlePost__img{
-    width: 100%;
+    width: 50%;
     height: 300px;
     border-radius: 5px;
     object-fit: cover;
+    align-self: center;
 }
 
 .singlePost__title {
@@ -34,7 +35,8 @@
 }
 
 .singlePost__title__input:focus{
-    outline: none;
+    outline: 1px solid #343a40;
+    border-radius: 10px;
 }
 
 .singlePost__edit{
@@ -60,7 +62,7 @@
     display: flex;
     justify-content: space-between;
     font-size: 16px;
-    color: #b39656;
+    color: #343a40;
     font-family: 'Varela Round', sans-serif;
 }
 
@@ -84,7 +86,8 @@
 }
 
 .singlePost__desc__input:focus{
-    outline: none;
+    outline: 1px solid #343a40 ;
+    border-radius: 10px;
 }
 
 .singlePost__edit__button{

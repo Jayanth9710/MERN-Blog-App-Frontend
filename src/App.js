@@ -11,8 +11,9 @@ import {
   Routes,
   Route
 } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Context } from "./Components/Context/Context";
+import SideMenu from "./Components/Menu/SideMenu";
 
 
 function App() {
@@ -46,9 +47,11 @@ function App() {
     }
   }
 
+  const [menuOpen,setMenuOpen] = useState(false)
   return ( <>
     <BrowserRouter>
-    <Navbar/>
+    <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
+    <SideMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
     <Routes>
     <Route path="/" element={<HomeScreen/>}/>
     <Route path="/register" element={showRegister()}/>

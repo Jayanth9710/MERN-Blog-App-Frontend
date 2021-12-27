@@ -4,6 +4,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #e9ecef;
     /* background-image: ; */
 }
 
@@ -30,7 +31,7 @@
 .registerButton{
     margin-top: 20px;
     cursor: pointer;
-    background-color: teal;
+    background-color: #495057;
     border: none;
     color: white;
     border-radius: 10px;
@@ -41,7 +42,7 @@
     position: absolute;
     top: 60px;
     right: 20px;
-    background-color: lightcoral;
+    background-color: #495057;
     cursor: pointer;
     border: none;
     padding: 10px;

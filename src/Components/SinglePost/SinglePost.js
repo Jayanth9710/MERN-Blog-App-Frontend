@@ -58,7 +58,7 @@ getPost()
             <h1 className="singlePost__title">
                 {title}
                 {post.username === user.username &&( 
-                <div className="singlePost__edit">
+                <div className="singlePost__edit"> 
                 <i class=" singlePost__icon far fa-edit" onClick={()=>setUpdate(true)}></i>
                 <i class=" singlePost__icon far fa-trash-alt" onClick={handleDelete}></i>
                 </div>
