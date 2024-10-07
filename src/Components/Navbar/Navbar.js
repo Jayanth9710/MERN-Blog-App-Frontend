@@ -5,7 +5,7 @@ import './Navbar.scss'
 
 export default function Navbar({ menuOpen, setMenuOpen }) {
     const {user,dispatch} = useContext(Context);
-    const PF ="https://mern-blog-app-jay.herokuapp.com/images/"
+    const PF ="https://mern-blog-app-backend-alpha.vercel.app/images/"
     const handleLogout = () => {
         dispatch({ type:"LOGOUT" })
     }
